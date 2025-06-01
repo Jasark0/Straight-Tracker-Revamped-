@@ -1,0 +1,73 @@
+/*Title CSS*/
+
+.title-box {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15vh;
+  background-color: hsl(74, 56%, 80%);
+  left: 0;
+  right: 0;
+  top: 0;
+  border-bottom: 3px solid black;
+}
+
+.title-name{
+  color: black;
+  font-size: 30px;
+  font-family: 'Exo 2';
+  letter-spacing: 3px;
+  word-spacing: 20px;
+}
+
+/*Message CSS*/
+.names-selection-message{
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.names-message{
+  color: black;
+  font-size: 25px;
+  letter-spacing: 2px;
+  font-family: 'Exo 2';
+}
+
+/*Input CSS*/
+.input-names-box{ 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-left: 50px;
+  padding-right: 50px;
+  height: 50vh;
+  align-items: center;
+  column-gap: 20vh;
+}
+
+.input-names-box1, .input-names-box2{
+  color: black;
+  background-color: hsl(60, 57%, 95%);
+  height: 30vh;
+  border: 3px solid black;
+  border-radius: 75px;
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 2px;
+}
+
+.input-names{
+  color: black;
+  text-align: center;
+  font-size: 35px;
+  letter-spacing: 2px;
+}
+
+.input-names-box1::placeholder, .input-names-box2::placeholder{
+  color: black;
+  text-align: center;
+  font-size: 25px;
+  letter-spacing: 2px;
+  color: hsl(0, 0%, 75%);
+}
