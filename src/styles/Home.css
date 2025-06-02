@@ -22,8 +22,10 @@
 }
 
 /*Message CSS*/
+
 .names-selection-message{
   display: flex;
+  margin-top: 10vh;
   justify-content: center;
   width: 100vw;
 }
@@ -35,7 +37,9 @@
   font-family: 'Exo 2';
 }
 
+
 /*Input CSS*/
+
 .input-names-box{ 
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -59,6 +63,7 @@
 
 .input-names{
   color: black;
+  font-family: 'Exo 2';
   text-align: center;
   font-size: 35px;
   letter-spacing: 2px;
@@ -67,7 +72,42 @@
 .input-names-box1::placeholder, .input-names-box2::placeholder{
   color: black;
   text-align: center;
-  font-size: 25px;
+  font-size: 30px;
   letter-spacing: 2px;
   color: hsl(0, 0%, 75%);
+}
+
+.input-names-box1:focus{
+  border: 1px solid white;
+  box-shadow: 0 0 20px #8ab1f0; /* glow effect */
+  transition: 0.2s ease;
+}
+
+.input-names-box2:focus{
+  border: 1px solid white;
+  box-shadow: 0 0 20px #f14a29; /* glow effect */
+  transition: 0.2s ease;
+}
+
+/*Next-Button CSS*/
+
+.next-button-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.next-button{
+  padding: 20px 50px;
+  border-radius: 30px;
+  font-size: 20px;
+  border: none;
+  background-color:hsl(144, 100%, 80%);
+  cursor: pointer;
+  color:hsl(0, 6%, 20%);
+  transition: background-color 0.15s;
+}
+
+.next-button:hover{
+  background-color: hsl(144, 100%, 88%);
 }
