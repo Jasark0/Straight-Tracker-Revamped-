@@ -4,7 +4,7 @@ import "../styles/Tracker.css"
 const Tracker: React.FC = () => {
     return (
         <h1 className='testing'>
-            Hello world!
+            Hello world! Changed.
         </h1>
     )
 }

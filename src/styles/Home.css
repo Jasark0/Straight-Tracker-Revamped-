@@ -21,6 +21,7 @@
   word-spacing: 20px;
 }
 
+
 /*Message CSS*/
 
 .names-selection-message{
@@ -52,6 +53,7 @@
 
 .input-names-box1, .input-names-box2{
   color: black;
+  font-family: 'Exo 2';
   background-color: hsl(60, 57%, 95%);
   height: 30vh;
   border: 3px solid black;
@@ -71,21 +73,38 @@
 
 .input-names-box1::placeholder, .input-names-box2::placeholder{
   color: black;
+  font-family: 'Exo 2';
   text-align: center;
   font-size: 30px;
   letter-spacing: 2px;
   color: hsl(0, 0%, 75%);
 }
 
+.input-names-box1:hover{
+  box-shadow: 0 0 10px #8ab1f0;  
+  background-color: rgb(226, 243, 238);
+  transition: 0.3s ease;
+}
+
 .input-names-box1:focus{
-  border: 1px solid white;
-  box-shadow: 0 0 20px #8ab1f0; /* glow effect */
+  border: 1px solid black;
+  outline: none;
+  box-shadow: 0 0 20px #8ab1f0; 
+  background-color: rgb(194, 221, 231);
   transition: 0.2s ease;
 }
 
+.input-names-box2:hover{
+  box-shadow: 0 0 10px #f14a29;
+  background-color: rgb(245, 236, 235);
+  transition: 0.3s ease;
+}
+
 .input-names-box2:focus{
-  border: 1px solid white;
-  box-shadow: 0 0 20px #f14a29; /* glow effect */
+  border: 1px solid black;
+  outline: none;
+  box-shadow: 0 0 20px #f14a29; 
+  background-color: rgb(251, 220, 220);
   transition: 0.2s ease;
 }
 
