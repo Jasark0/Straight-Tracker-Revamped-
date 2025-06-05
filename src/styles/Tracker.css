@@ -1,4 +1,125 @@
-.testing{
-    color: black;
-    font-size: 15px;
+.remaining-balls-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100vw;
+}
+
+.remaining-balls-style{
+  color: black;
+  font-size: 50px;
+  font-family: 'Exo 2';
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.rack-number{
+  color: black;
+  font-size: 20px;
+  font-family: 'Exo 2';
+}
+
+.player-boxes{
+  color: black;
+  margin-top: -15vh;
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.player1-box{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.player2-box{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.player1-name, .player2-name{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  font-family: Exo 2;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.score-box{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.increment-box{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  row-gap: 10px;
+}
+
+.decrement-button, .increment-button{
+  display: flex;
+  height: 75px;
+  width: 75px;
+  border: 1px solid black;
+  border-radius: 38px;
+  font-size: 25px;
+  background-color:antiquewhite;
+  color: rgb(50, 50, 50);
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.decrement-button:hover, .increment-button:hover{
+  border: 1px solid black;
+  background-color: rgb(240, 228, 212);
+  box-shadow: 0 0 5px rgb(234, 205, 167);
+  transition: 0.3s ease;
+}
+
+.decrement-button:focus, .increment-button:focus{
+  outline: none;
+  border: 1px solid black;
+  box-shadow: 0 0 5px rgb(234, 205, 167);
+}
+
+.decrement-button:active, .increment-button:active{
+  box-shadow: inset 3px 3px 5px rgb(227, 204, 173);
+  top: 5px;
+  left: 5px;
+  border: 1px solid black;
+  transition: 0ms;
+}
+
+.player1-score{
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  font-size: 115px;
+  color: hsl(6, 93%, 71%);
+}
+
+.player2-score{
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  font-size: 115px;
+  color: hsl(250, 100%, 65%);
+}
+
+.high-style{
+  margin-top: 20px;
+  font-size: 25px;
+  text-align: center;
 }

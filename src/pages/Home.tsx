@@ -5,6 +5,7 @@ import "../styles/Home.css"
 
 const Home: React.FC = () => {
     const navigate = useNavigate();
+    
     const [name1, setName1] = useState('');
     const [name2, setName2] = useState('');
 
@@ -15,6 +16,7 @@ const Home: React.FC = () => {
     const changeName2 = (e: React.ChangeEvent<HTMLInputElement>) => {
         setName2(e.target.value);
     }
+
 
     const nextPage = () => {
         navigate('/tracker');
