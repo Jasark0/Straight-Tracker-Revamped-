@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react'
+import LeftArrow from "../assets/leftArrow.png"
+import RightArrow from "../assets/rightArrow.png"
+import Hamburger from "../assets/hamburger-menu.png"
 import "../styles/General.css"
 import "../styles/Home.css"
 import "../styles/Tracker.css"
 
 const Tracker: React.FC = () => {
     return (
-        <div>
+        <div className="main-box">
             <div className="title-box">
+                <img src={Hamburger} className="hamburger-style"></img>
                 <p className="title-name">
                     Straight Pool - Score Tracker
                 </p>
@@ -17,7 +21,7 @@ const Tracker: React.FC = () => {
                     15
                 </p>
                 <p className="remaining-balls-style">
-                    remaining balls
+                    Remaining Balls
                 </p>
                 <p className="rack-number">
                     (Rack 1)
@@ -26,16 +30,19 @@ const Tracker: React.FC = () => {
             
             <div className="player-boxes">
                 <div className="player1-box">
-                    <p id = "player1" className="player1-name"></p>
-                        <div className="score-box">
-                            <button className="decrement-button">-</button>
-                            <p className="player1-score">0</p>
-                            <div className="increment-box">
-                                <button className="increment-button">+</button>
-                                <button className="increment-button">+2</button>
+                    <p id = "player1" className="player1-name">Jason</p>
+                    <div className="score-box">
+                        <button className="decrement-button">-</button>
+                        <p className="player1-score">0</p>
+                        <div className="increment-box">
+                            <button className="increment-button">+</button>
+                            <button className="increment-button">+2</button>
+                            <div className="CR-box">
                                 <button className="increment-button">CR</button>
+                                <button className="CR-icon">i</button>
                             </div>
                         </div>
+                    </div>
         
                     <div className="high-style player1-high-run">
                         High Run: 0
@@ -45,19 +52,19 @@ const Tracker: React.FC = () => {
                     </div>
                 </div>
         
+                
                 <div>
-                    <div>
-                        <img src="/images/leftArrow.png" className="image-style" id="player-turn"></img>
-                        <div className="player-turn-text-style" id="player-turn-text">
-                        </div>
-                        <div className="player-swap-text-style">
-                            (Press spacebar to swap turn)
-                        </div>
+                    <img src={LeftArrow} className="image-style" id="player-turn"></img>
+                    <div className="player-turn-text-style" id="player-turn-text">
+                    </div>
+                    <div className="player-swap-text-style">
+                        (Press spacebar to swap turn)
                     </div>
                 </div>
+                
         
                 <div className="player2-box">
-                    <p id = "player2" className="player2-name"></p>
+                    <p id = "player2" className="player2-name">John</p>
                     <div className="score-box">
                         <button className="decrement-button">-</button>
                         <p className="player2-score">0</p>
@@ -75,6 +82,10 @@ const Tracker: React.FC = () => {
                         Current High Run: 0
                     </div>
                 </div>
+            </div>
+
+            <div className="undo-box">
+                <button className="undo-style">Undo</button>
             </div>
         </div>
 
