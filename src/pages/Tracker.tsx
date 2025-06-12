@@ -3,7 +3,7 @@ import LeftArrow from "../assets/leftArrow.png"
 import RightArrow from "../assets/rightArrow.png"
 import Hamburger from "../assets/hamburger-menu.png"
 import "../styles/General.css"
-import "../styles/Home.css"
+import "../styles/Select.css"
 import "../styles/Tracker.css"
 
 const Tracker: React.FC = () => {

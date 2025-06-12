@@ -56,7 +56,6 @@
 .player-boxes{
   color: black;
   display: grid;
-  margin-top: -20vh;
   grid-template-columns: 2fr 1fr 2fr;
   align-items: center;
   justify-content: center;
@@ -70,11 +69,11 @@
 
 .player1-name, .player2-name{
   display: grid;
-  margin-bottom: 2vh;
   align-items: center;
   justify-content: center;
   font-size: 60px;
   font-family: 'Exo 2';
+  margin-top: -10vh;
   letter-spacing: 2px;
 }
 
@@ -93,10 +92,10 @@
 
 .decrement-button, .increment-button{
   display: flex;
-  height: 75px;
-  width: 75px;
+  height: 85px;
+  width: 85px;
   border: 1px solid black;
-  border-radius: 38px;
+  border-radius: 43px;
   font-size: 25px;
   background-color:antiquewhite;
   color: rgb(50, 50, 50);
@@ -181,7 +180,7 @@
   display: flex;
   justify-content: center;
   margin-top: 0;
-  font-size: 115px;
+  font-size: 125px;
   color: hsl(6, 93%, 71%);
 }
 
@@ -189,7 +188,7 @@
   display: flex;
   justify-content: center;
   margin-top: 0;
-  font-size: 115px;
+  font-size: 125px;
   color: hsl(250, 100%, 65%);
 }
 
