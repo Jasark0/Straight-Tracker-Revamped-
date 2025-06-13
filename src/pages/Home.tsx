@@ -6,12 +6,36 @@ import "../styles/General.css"
 import "../styles/Home.css"
 
 const Home: React.FC = () => {
+    const navigate = useNavigate();
+
+    const homePage = () => {
+        navigate('/');
+    }
+
+    const signinPage = () => {
+        navigate('/signin');
+    }
+    
+    const signupPage = () => {
+        navigate('/signup');
+    }
+
     return (
         <div className="home-title-box">
-            <img src={Logo} className="logo-css"></img>
-            <p className="home-title-name">
-                Straight Tracker
-            </p>
+            <div className="logo-box" onClick={homePage}>
+                <img src={Logo} className="logo-css"></img>
+                <p className="home-title-name">
+                    Straight Tracker
+                </p>
+            </div>
+            <div className="login-box">
+                <button className="sign-in-css" onClick={signinPage}>
+                    Sign in
+                </button>
+                <button className="sign-up-css" onClick={signupPage}>
+                    Sign up
+                </button>
+            </div>
         </div>
     )
 }
