@@ -14,6 +14,10 @@ const Signup: React.FC = () => {
         navigate('/');
     }
 
+    const signinPage = () => {
+        navigate('/signin');
+    }
+
     const handleSignup = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
