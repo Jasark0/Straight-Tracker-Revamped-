@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { supabase } from '../client'
 
 import Logo from "../assets/straight-tracker-logo.png"
 import Google from "../assets/google.png"
@@ -7,9 +9,61 @@ import "../styles/General.css"
 import "../styles/Home.css"
 import "../styles/Signup.css"
 
+
 const Signup: React.FC = () => {
     const navigate = useNavigate();
-    
+
+    const [formData, setFormData] = useState({
+        username: '',
+        email: '',
+        password: '',
+        confirmPassword: ''
+    });
+
+    const [error, setError] = useState<string | null>(null);
+    const [loading, setLoading] = useState(false);
+
+    console.log(formData);
+
+    function handleChange(event: React.ChangeEvent<HTMLInputElement>) 
+    {
+        setFormData(prevFormData => {
+            return {
+                ...prevFormData,
+                [event.target.name]: event.target.value
+            };
+        });
+    }
+
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        setError(null);
+
+        // 1. Confirm Password Check
+        if (formData.password !== formData.confirmPassword) {
+            setError("Passwords do not match.");
+            return;
+        }
+
+        setLoading(true);
+
+        try {
+            const {data, error } = await supabase.auth.signUp({
+                email: formData.email,
+                password: formData.password,
+                options: {
+                    data: {
+                        username: formData.username
+                    }
+                }
+            })
+            if (error) { throw error;}
+            alert ("Check your email for the confirmation link.");
+        } catch (error){
+            alert ("Signup.tsx: " + error);
+        }
+    }
+
     const homePage = () => {
         navigate('/');
     }
@@ -17,23 +71,6 @@ const Signup: React.FC = () => {
     const signinPage = () => {
         navigate('/signin');
     }
-
-    const handleSignup = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-
-        if (password !== confirmPassword){
-            setError("Passwords do not match.");
-            return;
-        }
-
-        setError('');
-        console.log("Sign up submitted");
-    };
-    
-
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [error, setError] = useState('');
     
     return (
         <div className="page-box">
@@ -48,24 +85,44 @@ const Signup: React.FC = () => {
 
             <div className="sign-up-box">
                 <p className="title-text-css">Create an Account</p>
-                <form onSubmit={handleSignup}>
+                <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label>Username</label>
-                        <input type="text" placeholder="Your name" required pattern="^[A-Za-z0-9_]+$" title="Username can only contain letters, numbers, and underscores"/>
+                        <input 
+                        type="text" 
+                        placeholder="Your name" 
+                        required pattern="^[A-Za-z0-9_]+$" 
+                        title="Username can only contain letters, numbers, and underscores"
+                        name="username"
+                        onChange= {handleChange}/>
                     </div>
                     <div className="form-group">
                         <label>Email</label>
-                        <input type="email" placeholder="Email address" required />
+                        <input 
+                        type="email" 
+                        placeholder="Email address" 
+                        required
+                        name="email"
+                        onChange= {handleChange}
+                         />
                     </div>
                     <div className="form-group">
                         <label>Password</label>
-                        <input type="password" placeholder="Password" value={password} 
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)} required />
+                        <input 
+                        type="password"
+                        placeholder="Password" 
+                        required
+                        name="password"
+                        onChange= {handleChange} />
                     </div>
                     <div className="form-group">
                         <label>Confirm Password</label>
-                        <input type="password" placeholder="Enter your password again" value={confirmPassword} 
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setConfirmPassword(e.target.value)}required />
+                        <input 
+                        type="password" 
+                        placeholder="Enter your password again" 
+                        required
+                        name="confirmPassword"
+                        onChange= {handleChange}/>
                     </div>
                     {error && <p className="error-message">{error}</p>}
                     <button type="submit" className="submit-btn">Sign Up</button>
@@ -74,6 +131,8 @@ const Signup: React.FC = () => {
                         or
                 </p>
                 <img src={Google} className="google-css"></img>
+                <p className="or-css">Already have an account? <Link to='/signin'>  Login</Link> </p> 
+                
             </div>
 
         </div>
